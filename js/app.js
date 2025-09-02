@@ -53,3 +53,42 @@ document.getElementById('productImg').addEventListener('animationstart', (e) => 
   console.log('Fade-in animation started for productImg');
 });
 })();
+
+// Form submission for contact form
+(function initContactForm(){
+  const form = document.getElementById('contact-form');
+  if(!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Client-side validation
+    const name = form.elements['name'].value.trim();
+    const email = form.elements['email'].value.trim();
+    const message = form.elements['message'].value.trim();
+    if (!name || !email || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    // Prepare form data
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+      } else {
+        alert('Oops! Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Oops! Something went wrong. Please try again.');
+    }
+  });
+})();
