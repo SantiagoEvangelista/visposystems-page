@@ -1,0 +1,79 @@
+/* Ultra-minimal all-black UI for Vispo site */
+:root {
+  --bg: #000;            /* pure black */
+  --text: #f5f6f7;       /* soft white */
+  --muted: #a1a3a8;      /* adjusted gray for better contrast */
+  --accent: #1a1a2e;     /* dark blue-gray for accents */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:400;line-height:1.5}
+img{max-width:100%;display:block}
+
+a{color:var(--text);text-decoration:none}
+a:hover{opacity:.85}
+
+/* Header */
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1rem;background:rgba(0,0,0,.7);backdrop-filter:blur(6px)}
+.nav .logo{height:48px;opacity:.95}
+.nav .logo.large{height:64px;}
+.nav nav a{margin-left:1rem;color:var(--muted);padding:.7rem 1rem;border-radius:10px;border:1px solid transparent;transition: all 0.2s ease}
+.nav nav a.active,.nav nav a:hover{color:var(--text);background:#111;border-color:#333}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;max-width:1200px;margin:0 auto;padding:clamp(2rem,6vw,6rem) 1rem 2rem}
+.copy .slogan{font-size:clamp(1.6rem,4.5vw,4rem);margin:0 0 .4rem;font-weight:600;letter-spacing:0.02em;line-height:1.2;font-style:italic}
+.copy .domains{margin:0;color:var(--muted);font-weight:400;letter-spacing:0.02em}
+
+.visual{position:relative;margin:0}
+.visual img{opacity:0;transform:scale(0.95);width:100%;height:auto;border:0;animation:fadeIn 1.5s ease-out forwards;will-change:opacity,transform;/* fade edges so the image melts into black */
+  -webkit-mask-image: radial-gradient(120% 120% at 60% 40%, #000 60%, transparent 95%);
+          mask-image: radial-gradient(120% 120% at 60% 40%, #000 60%, transparent 95%);
+}
+.visual figcaption{position:absolute;left:0;bottom:-.2rem;font-size:.9rem;color:var(--muted);letter-spacing:.04em}
+
+/* Deck */
+.deck{max-width:1400px;margin:3rem auto 3rem;padding:0 1rem}
+.deckTitle{margin:0 0 .6rem;font-weight:600;color:var(--muted);text-align:center;letter-spacing:0.02em;line-height:1.2}
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:90%;gap:0.4rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.2rem}
+.carousel video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;scroll-snap-align:start;border:0;outline:none}
+
+/* Contact */
+.contactWrap{max-width:700px;margin:2rem auto 3rem;padding:0 1rem}
+.pageTitle{margin:0 0 .4rem}
+.lede.center,.center{text-align:center;color:var(--muted)}
+.contactForm.minimal{display:grid;gap:.8rem;margin:1rem auto 0;max-width:520px}
+.contactForm.minimal label{display:grid;gap:.35rem}
+.contactForm.minimal input,.contactForm.minimal textarea{background:#0b0b0b;color:var(--text);border:1px solid #111;border-radius:10px;padding:.7rem .9rem}
+.contactForm.minimal input:focus,.contactForm.minimal textarea:focus{outline:1px solid #333}
+.btn.primary{background:#0f0f0f;border:1px solid #1a1a1a;color:var(--text);padding:.7rem 1rem;border-radius:10px}
+.btn.primary:hover{background:#151515}
+
+/* Footer */
+.footer{display:flex;gap:1rem;align-items:center;justify-content:center;padding:1rem;border-top:1px solid var(--accent);background:#000}
+.footer .logo.small{height:20px;opacity:.75}
+.footer a{color:var(--muted);padding:.4rem .8rem;border-radius:6px;border:1px solid transparent;transition:all 0.2s ease}
+.footer a:hover{color:var(--text);background:#111;border-color:#333}
+
+/* Features */
+.features{max-width:1200px;margin:4rem auto;padding:0 1rem}
+.features h2{font-weight:600;color:var(--text);margin:0 0 2rem;font-size:clamp(1.5rem,3vw,2.5rem);text-align:center;letter-spacing:0.02em;line-height:1.2}
+.features ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;justify-items:start}
+.features li{color:var(--text);font-weight:400;font-size:1.1rem;line-height:1.6;padding-left:1.5rem;position:relative}
+.features li:before{content:'•';position:absolute;left:0;color:var(--accent);font-size:1.5rem;line-height:1;top:0}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .carousel{grid-auto-columns:92%}
+}

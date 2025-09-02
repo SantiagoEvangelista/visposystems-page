@@ -1,44 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vispo</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    img {
-      max-width: 200px;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #58a6ff;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #6e7681;
-    }
-  </style>
+  <meta name="description" content="The Swiss multi‑tool of modern electronic warfare." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <img src="logo.png" alt="Vispo Logo">
-  <h1>Building something great.</h1>
-  <footer>© 2025 Vispo</footer>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Vispo home">
+      <img src="assets/logo.png" alt="Vispo" class="logo large" />
+    </a>
+    <nav>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Product">
+      <div class="copy">
+        <p class="slogan"><em>The Swiss multitool for modern electronic warfare</em></p>
+        <p class="domains">Space • Air • Ground</p>
+      </div>
+
+      <figure class="visual" id="tiltWrap" aria-label="Product image">
+        <img id="productImg" src="assets/vispo-blackbox.png" alt="" />
+      </figure>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Portable and rugged design for field operations</li>
+        <li>Advanced encryption and secure communication</li>
+        <li>Real-time data processing and analysis</li>
+        <li>Multi-domain warfare capabilities (space, air, ground)</li>
+        <li>Swiss precision engineering for reliability</li>
+      </ul>
+    </section>
+
+    <section class="deck" aria-label="Use cases">
+      <h2 class="deckTitle">Multi‑domain operations</h2>
+      <div class="carousel" id="carousel">
+        <video muted playsinline loop preload="metadata" src="assets/usecase1.mp4"></video>
+        <video muted playsinline loop preload="metadata" src="assets/usecase2.mp4"></video>
+        <video muted playsinline loop preload="metadata" src="assets/usecase3.mp4"></video>
+        <video muted playsinline loop preload="metadata" src="assets/usecase4.mp4"></video>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.png" alt="Vispo" class="logo small" />
+    <a href="contact.html">Contact</a>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

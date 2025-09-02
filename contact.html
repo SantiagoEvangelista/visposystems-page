@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vispo — Contact</title>
+  <meta name="description" content="Get in touch with Vispo." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Vispo home">
+      <img src="assets/logo.png" alt="Vispo" class="logo large" />
+    </a>
+    <nav>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contactWrap" aria-label="Contact">
+      <h1 class="pageTitle">Contact</h1>
+      <p class="lede center">We build compact RF systems for multi‑domain operations.</p>
+      <p class="center">Email us: <a href="mailto:contact@visposystems.com">contact@visposystems.com</a></p>
+
+      <form class="contactForm minimal" action="mailto:contact@visposystems.com" method="post" enctype="text/plain">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Jane Doe" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="jane@org.tld" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.png" alt="Vispo" class="logo small" />
+    <a href="/">Home</a>
+  </footer>
+</body>
+</html>
