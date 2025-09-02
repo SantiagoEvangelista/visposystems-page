@@ -27,9 +27,33 @@ function throttle(fn, wait) {
   // Scroll buttons
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  let autoTimer;
+  const interval = 5000; // configurable
   const scrollAmount = () => car.clientWidth * 0.88;
-  prevBtn && prevBtn.addEventListener('click', ()=> car.scrollBy({left: -scrollAmount(), behavior:'smooth'}));
-  nextBtn && nextBtn.addEventListener('click', ()=> car.scrollBy({left: scrollAmount(), behavior:'smooth'}));
+  const startAutoAdvance = () => {
+    autoTimer = setInterval(() => {
+      const nextPos = car.scrollLeft + scrollAmount();
+      if (nextPos >= car.scrollWidth - car.clientWidth) {
+        car.scrollTo({left: 0, behavior: 'smooth'});
+      } else {
+        car.scrollBy({left: scrollAmount(), behavior: 'smooth'});
+      }
+    }, interval);
+  };
+  startAutoAdvance();
+
+  prevBtn && prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearInterval(autoTimer);
+    autoTimer = undefined;
+    car.scrollBy({left: -scrollAmount(), behavior:'smooth'});
+  });
+  nextBtn && nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearInterval(autoTimer);
+    autoTimer = undefined;
+    car.scrollBy({left: scrollAmount(), behavior:'smooth'});
+  });
 
   // Improve focus/keyboard accessibility
   cards.forEach(c => c.setAttribute('tabindex','0'));

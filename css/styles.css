@@ -45,8 +45,13 @@ a:hover{opacity:.85}
 /* Deck */
 .deck{max-width:1400px;margin:3rem auto 3rem;padding:0 1rem}
 .deckTitle{margin:0 0 .6rem;font-weight:600;color:var(--muted);text-align:center;letter-spacing:0.02em;line-height:1.2}
-.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:90%;gap:0.4rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.2rem}
-.carousel video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;scroll-snap-align:start;border:0;outline:none}
+.carousel{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:90%;gap:0.4rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.2rem}
+.carousel .card {scroll-snap-align:start;}
+.carousel .card video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;border:0;outline:none}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:transparent;color:#fff;border:none;font-size:2rem;cursor:pointer;z-index:1;padding:0.5rem;border-radius:50%;transition:opacity 0.3s ease}
+.carousel-btn:hover{opacity:0.8}
+.carousel-btn.prev{left:1rem}
+.carousel-btn.next{right:1rem}
 
 /* Contact */
 .contactWrap{max-width:700px;margin:2rem auto 3rem;padding:0 1rem}
