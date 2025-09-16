@@ -1,44 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vispo</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    img {
-      max-width: 200px;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #58a6ff;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #6e7681;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vispo Systems</title>
+  <meta name="description" content="The multitool of modern electronic warfare." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <img src="logo.png" alt="Vispo Logo">
-  <h1>Building something great.</h1>
-  <footer>© 2025 Vispo</footer>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Vispo home">
+      <img src="assets/logo.png" alt="Vispo" class="logo large" />
+    </a>
+    <nav id="site-menu">
+      <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Mobile toggle button (shown on small screens) -->
+    <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu">
+      <img src="assets/menu_logo.png" alt="" width="24" height="24" />
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Product">
+      <div class="copy">
+        <p class="slogan"><em>Superiority in modern electronic warfare</em></p>
+        <p class="domains">Space • Air • Ground</p>
+      </div>
+
+      <figure class="visual" id="tiltWrap" aria-label="Product image">
+        <img id="productImg" src="assets/vispo-blackbox.png" alt="" />
+      </figure>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="Thesis" aria-label="Thesis">
+      <div class="thesis-content">
+        <h3 style="color: #7EC5D9;">THE NEW BATTLEFIELD</h3>
+        <p>Signals get disrupted, sensors deceived, and communications overwhelmed.<br>
+          Weapons miss their targets, defenses are blinded, and centralized commands lag behind.
+        </p>
+      </div>
+    </section>
+
+    <!-- New bridge with vertical dividers and the extracted sentence -->
+    <section class="thesis-value-bridge" aria-label="Electronic warfare context">
+      <div class="v-divider" aria-hidden="true"></div>
+      <p class="bridge-text">The invisible front line of modern conflict is electronic warfare.</p>
+      <div class="v-divider" aria-hidden="true"></div>
+    </section>
+
+    <section class="Value" aria-label="Value">
+      <div class="value-content">
+        <h3 style="color: #7EC5D9;">VISPO GIVES YOU BACK SUPERIORITY</h3>
+        <p>Detect, analyze, and counteract electronic threats in real-time.</p>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- INTERACTIVE PRODUCT FEATURES ANIMATION -->
+    <!-- <section class="product_features" aria-label="Product features">
+      <div id="pf" class="pf" style="position:relative; height:100vh; display:grid; grid-template-columns: 1.1fr 2fr; gap: 2rem; align-items:center; padding: 0 clamp(16px, 5vw, 48px);">
+        <aside class="pf-sidebar" aria-label="Feature steps">
+          <ul id="pfList">
+            <li class="pf-item" data-step="1">Real-time data processing for threats detection</li>
+            <li class="pf-item" data-step="2">Multi-domain threats detection</li>
+            <li class="pf-item" data-step="3">Advanced encryption and secure communication</li>
+            <li class="pf-item" data-step="4">Portable and rugged design for field operations</li>
+          </ul>
+        </aside>
+        <div class="pf-stage" aria-label="Animation stage" style="position:relative; min-height:60vh;">
+          <img id="pfBox" src="assets/vispo-blackbox_medium.png" alt="Vispo device" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(12vw,80px); max-width:100%; height:auto; border: 1px solid #fff;" />
+          <img id="pfDrone" src="assets/drone.png" alt="drone" style="position:absolute; top:6%; right:18%; width:min(10vw,80px); max-width:30%; height:auto;" />
+          <div id="pfWaves" aria-hidden="true" style="position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none; overflow:visible;"></div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="features" aria-label="Blackbox features">
+      <h3 style="font-size: 2rem;"> BLACKBOX</h3>
+      Detect, defend and defeat electronic threats with a backpack-sized system.
+      
+      <div style="height: 2em;"></div>
+      
+      <ul id="features-list">
+        <li class="list-item">Real-time data processing for threats detection</li>
+        <li class="list-item">Multi-domain threats detection</li>
+        <li class="list-item">Distributed network for increased resilience</li>
+        <li class="list-item">Private PNT to counteract jamming and spoofing</li>
+        <li class="list-item">Advanced encryption and secure communication</li>
+      </ul>
+    </section>
+
+    <!-- <section class="features" aria-label="Features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Portable and rugged design for field operations</li>
+        <li>Advanced encryption and secure communication</li>
+        <li>Real-time data processing and analysis</li>
+        <li>Multi-domain warfare capabilities (space, air, ground)</li>
+        <li>Swiss precision engineering for reliability</li>
+      </ul>
+    </section> -->
+  </main>
+
+<footer class="footer">
+  <div class="footer-left">
+    <a href="https://www.linkedin.com/company/visposystems" target="_blank">
+      <img src="assets/linkedinLogo.svg" alt="LinkedIn" class="icon" style="width:18px; height:18px;" />
+    </a>
+  </div>
+  <div class="footer-center">
+    <p>&copy; 2025 Vispo Systems Inc.</p>
+  </div>
+  <div class="footer-right">
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+  <script src="js/features_animation.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
