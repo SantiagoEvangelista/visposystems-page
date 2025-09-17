@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body style="min-height:100vh; display:flex; flex-direction:column;"></body>
+<body style="min-height:100vh; display:flex; flex-direction:column;">
   <header class="nav">
     <a class="brand" href="/" aria-label="Vispo home">
       <img src="assets/logo.png" alt="Vispo" class="logo large" />
@@ -18,13 +18,12 @@
       <a href="team.html">Team</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
-    <!-- Mobile toggle button (shown on small screens) -->
     <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu">
       <img src="assets/menu_logo.png" alt="" width="24" height="24" />
     </button>
   </header>
 
-  <main style="flex:1;"></main>
+  <main class="below-nav" style="flex:1;">
     <section class="contactWrap" aria-label="Contact">
       <h1 class="pageTitle">Contact</h1>
       <p class="lede center">We build compact & distributed systems to maintain electronic warfare superiority.</p>
@@ -50,7 +49,7 @@
 
   <footer class="footer" style="width:100%;">
     <div class="footer-left">
-      <a href="https://www.linkedin.com/company/visposystems" target="_blank">
+      <a href="https://www.linkedin.com/company/visposystems" target="_blank" rel="noopener noreferrer">
         <img src="assets/linkedinLogo.svg" alt="LinkedIn" class="icon" style="width:18px; height:18px;" />
       </a>
     </div>
@@ -58,9 +57,8 @@
       <p>&copy; 2025 Vispo Systems Inc.</p>
     </div>
     <div class="footer-right">
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </div>
   </footer>
-</body>
 </body>
 </html>

@@ -50,6 +50,10 @@ a:hover{opacity:.85}
   box-shadow: none;
 }
 
+/* Keep main below menu */
+.below-nav { padding-top: 96px; }
+@media (max-width: 640px) { .below-nav { padding-top: 112px; } }
+
 /* Titles lighter font */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 550;
@@ -520,6 +524,7 @@ main > .hero:first-child { padding-top: clamp(64px, 12vh, 120px); }
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
+  padding-top: 0;
 }
 
 .company-logo {
